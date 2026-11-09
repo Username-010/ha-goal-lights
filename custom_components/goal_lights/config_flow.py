@@ -15,7 +15,6 @@ from homeassistant.helpers.selector import (
     ColorRGBSelector,
     EntitySelector,
     EntitySelectorConfig,
-    MediaSelector,
     NumberSelector,
     NumberSelectorConfig,
     NumberSelectorMode,
@@ -71,7 +70,7 @@ def _schema(d: dict[str, Any] | None = None) -> vol.Schema:
                 EntitySelectorConfig(domain=["media_player"])
             ),
             vol.Optional(CONF_YOUTUBE, default=d.get(CONF_YOUTUBE, "")): TextSelector(),
-            vol.Optional(CONF_LOCAL_MEDIA, default=d.get(CONF_LOCAL_MEDIA)): MediaSelector(),
+            vol.Optional(CONF_LOCAL_MEDIA, default=d.get(CONF_LOCAL_MEDIA, "")): TextSelector(),
             vol.Required(
                 CONF_MEDIA_DURATION, default=d.get(CONF_MEDIA_DURATION, DEFAULT_MEDIA_DURATION)
             ): NumberSelector(
