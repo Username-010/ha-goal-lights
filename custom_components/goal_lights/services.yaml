@@ -1,0 +1,82 @@
+celebrate:
+  name: Celebrate
+  description: Flash lights and play goaltune (YouTube or local file). Honours the Watch switch.
+  fields:
+    team:
+      name: Team
+      description: Config entry title, e.g. feyenoord
+      required: false
+      example: feyenoord
+      selector:
+        text:
+    event:
+      name: Event
+      required: false
+      example: goal
+      selector:
+        select:
+          options:
+            - goal
+            - kickoff
+            - second_half
+    duration:
+      name: Duration
+      required: false
+      selector:
+        number:
+          min: 2
+          max: 15
+          unit_of_measurement: sec
+    entry_id:
+      name: Config entry id
+      required: false
+      selector:
+        text:
+
+flash:
+  name: Flash + goaltune (ignore Watch)
+  description: Same as celebrate but always runs (for tests).
+  fields:
+    team:
+      name: Team
+      required: false
+      selector:
+        text:
+    duration:
+      name: Duration
+      required: false
+      selector:
+        number:
+          min: 2
+          max: 15
+          unit_of_measurement: sec
+    entry_id:
+      name: Config entry id
+      required: false
+      selector:
+        text:
+
+test:
+  name: Test event
+  description: Play flash + goaltune as if kickoff, a goal, or second half just happened. Ignores Watch.
+  fields:
+    event:
+      name: Event
+      required: true
+      example: goal
+      selector:
+        select:
+          options:
+            - goal
+            - kickoff
+            - second_half
+    team:
+      name: Team
+      required: false
+      selector:
+        text:
+    entry_id:
+      name: Config entry id
+      required: false
+      selector:
+        text:

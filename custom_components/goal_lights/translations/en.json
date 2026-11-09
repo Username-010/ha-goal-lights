@@ -1,0 +1,39 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Goal Lights",
+        "description": "Flash your lights and play a goaltune (YouTube link or a local mp3/mp4) when your team scores. Works with Team Tracker sensors.",
+        "data": {
+          "name": "Name",
+          "trackers": "Score sensors (Team Tracker)",
+          "lights": "Lights to flash",
+          "color_a": "Colour A",
+          "color_b": "Colour B",
+          "extra_colors": "Extra colours (#RRGGBB or R,G,B separated by |)",
+          "media_player": "TV / speaker for goaltune",
+          "youtube": "YouTube link or video id",
+          "local_media": "Or upload / pick a local file",
+          "media_duration": "Goaltune length",
+          "brightness": "Flash brightness",
+          "interval_ms": "Flash speed (lower = faster)",
+          "duration_goal": "Goal flash length",
+          "duration_kickoff": "Kick-off flash length",
+          "duration_second_half": "Second-half flash length",
+          "restore": "Restore previous light colour",
+          "listen_trackers": "Listen to Team Tracker (turn off if an external poller fires celebrate)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "watch": { "name": "Watch" }
+    },
+    "button": {
+      "test_goal": { "name": "Test goal" },
+      "test_kickoff": { "name": "Test kick-off" },
+      "test_second_half": { "name": "Test second half" }
+    }
+  }
+}
